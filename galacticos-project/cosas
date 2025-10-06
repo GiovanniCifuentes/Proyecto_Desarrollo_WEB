@@ -1,0 +1,58 @@
+npm run dev
+
+npm start
+
+PS C:\Users\HP> docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED       STATUS       PORTS                    NAMES
+dd9e95c67060   postgres:13    "docker-entrypoint.s…"   7 hours ago   Up 7 hours   0.0.0.0:5432->5432/tcp   galacticos-project-postgres-1
+beb6728dc652   redis:alpine   "docker-entrypoint.s…"   7 hours ago   Up 7 hours   0.0.0.0:6379->6379/tcp   galacticos-project-redis-1
+
+docker exec -it galacticos-project-postgres-1 bash
+root@dd9e95c67060:/# psql -U postgres
+psql (13.22 (Debian 13.22-1.pgdg13+1))
+Type "help" for help.
+
+postgres=# \l
+                                   List of databases
+     Name      |  Owner   | Encoding |  Collate   |   Ctype    |   Access privileges
+---------------+----------+----------+------------+------------+-----------------------
+ galacticos_db | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+ postgres      | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+ template0     | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
+               |          |          |            |            | postgres=CTc/postgres
+ template1     | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
+               |          |          |            |            | postgres=CTc/postgres
+(4 rows)
+
+postgres=# \c galacticos_db
+You are now connected to database "galacticos_db" as user "postgres".
+galacticos_db=# \dt
+          List of relations
+ Schema |   Name   | Type  |  Owner
+--------+----------+-------+----------
+ public | eventos  | table | postgres
+ public | reservas | table | postgres
+ public | usuarios | table | postgres
+(3 rows)
+
+galacticos_db=# \d eventos
+                                        Table "public.eventos"
+    Column    |           Type           | Collation | Nullable |               Default
+--------------+--------------------------+-----------+----------+-------------------------------------
+ id           | integer                  |           | not null | nextval('eventos_id_seq'::regclass)
+ nombre       | character varying(255)   |           | not null |
+ descripcion  | text                     |           | not null |
+ fecha        | timestamp with time zone |           | not null |
+ aforo_maximo | integer                  |           | not null |
+ aforo_actual | integer                  |           |          | 0
+ precio       | double precision         |           | not null |
+ ubicacion    | character varying(255)   |           |          |
+ createdAt    | timestamp with time zone |           | not null |
+ updatedAt    | timestamp with time zone |           | not null |
+Indexes:
+    "eventos_pkey" PRIMARY KEY, btree (id)
+Referenced by:
+    TABLE "reservas" CONSTRAINT "reservas_evento_id_fkey" FOREIGN KEY (evento_id) REFERENCES eventos(id) ON UPDATE CASCADE ON DELETE CASCADE
+
+galacticos_db=# c^C
+galacticos_db=#
