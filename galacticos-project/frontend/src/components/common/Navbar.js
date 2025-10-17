@@ -2,6 +2,7 @@ import React from 'react';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+// El logo se accede directamente desde la carpeta public
 
 const CustomNavbar = () => {
   const { usuario, logout, isAdmin } = useAuth();
@@ -13,21 +14,15 @@ const CustomNavbar = () => {
   };
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" className="mb-4">
+    <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
         <Navbar.Brand as={Link} to="/">
-          <i className="fas fa-rocket me-2"></i>
-          Galacticos S.A.
+          <img src="/LogoBlanco.png" alt="Galacticos S.A." style={{ width: '80px', height: '80px' }} />
         </Navbar.Brand>
         
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/eventos">
-              <i className="fas fa-calendar-alt me-1"></i>
-              Eventos
-            </Nav.Link>
-            
             {usuario && (
               <Nav.Link as={Link} to="/reservas">
                 <i className="fas fa-ticket-alt me-1"></i>

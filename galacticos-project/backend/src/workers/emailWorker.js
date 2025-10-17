@@ -60,12 +60,12 @@ const emailWorker = new Worker('emailQueue', async (job) => {
                     <p><strong>Evento:</strong> ${reserva.evento.nombre}</p>
                     <p><strong>Fecha:</strong> ${new Date(reserva.evento.fecha).toLocaleString()}</p>
                     <p><strong>Ubicación:</strong> ${reserva.evento.ubicacion || 'Por definir'}</p>
-                    <p><strong>Precio por entrada:</strong> $${reserva.evento.precio}</p>
+                    <p><strong>Precio por entrada:</strong> Q${reserva.evento.precio}</p>
                     
                     <h3>Detalles de la Reserva</h3>
                     <p><strong>Número de reserva:</strong> ${reserva.id}</p>
                     <p><strong>Cantidad de entradas:</strong> ${reserva.cantidad_entradas}</p>
-                    <p><strong>Total pagado:</strong> $${reserva.evento.precio * reserva.cantidad_entradas}</p>
+                    <p><strong>Total pagado:</strong> Q${reserva.evento.precio * reserva.cantidad_entradas}</p>
                     <p><strong>Código de reserva:</strong> ${reserva.codigo_qr}</p>
                 </div>
                 

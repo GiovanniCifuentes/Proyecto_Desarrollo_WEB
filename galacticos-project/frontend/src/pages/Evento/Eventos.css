@@ -1,0 +1,213 @@
+/* ==========================
+   EVENTOS PAGE - DISEÑO PROFESIONAL Y MINIMALISTA
+   ========================== */
+
+/* Wrapper principal */
+.eventos-page-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding-bottom: 2rem;
+}
+
+/* Header de la página */
+.eventos-header {
+  background: linear-gradient(135deg, #00050c 0%, #040a44 100%);
+  margin-bottom: 2rem;
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 0 4px 20px rgba(13, 110, 253, 0.15);
+}
+
+/* Animaciones suaves */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cards de eventos */
+.eventos-page-wrapper .card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.eventos-page-wrapper .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: #a3a7ad;
+}
+
+/* Imágenes de eventos */
+.eventos-page-wrapper .card-img {
+  transition: transform 0.3s ease;
+}
+
+.eventos-page-wrapper .card:hover .card-img {
+  transform: scale(1.05);
+}
+
+/* Badges de tipo */
+.eventos-page-wrapper .badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Botones de filtro */
+.eventos-page-wrapper .btn {
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.eventos-page-wrapper .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Botón primario */
+.eventos-page-wrapper .btn-primary {
+  background: linear-gradient(135deg, #061a38 0%, #1f2b5e 100%);
+  border: none;
+  box-shadow: 0 2px 8px rgba(13, 110, 253, 0.3);
+}
+
+.eventos-page-wrapper .btn-primary:hover {
+  background: linear-gradient(135deg, #061a38 0%, #1f2b5e 100%);
+  box-shadow: 0 4px 15px rgba(13, 110, 253, 0.4);
+}
+
+/* Botón outline */
+.eventos-page-wrapper .btn-outline-primary {
+  border-color: #010813;
+  color: #030f22;
+}
+
+.eventos-page-wrapper .btn-outline-primary:hover {
+  background: #08285c;
+  border-color: #204d96;
+  transform: translateY(-2px);
+}
+
+/* Cards de filtros */
+.eventos-page-wrapper .card-body {
+  background: #ffffff;
+}
+
+/* Estados de error */
+.error-state {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .eventos-header {
+    margin-bottom: 1rem;
+    border-radius: 0 0 1rem 1rem;
+  }
+  
+  .eventos-header h1 {
+    font-size: 2rem;
+  }
+  
+  .eventos-header .lead {
+    font-size: 1rem;
+  }
+  
+  .eventos-page-wrapper .card-body {
+    padding: 1rem;
+  }
+  
+  .eventos-page-wrapper .btn {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .eventos-header {
+    padding: 2rem 0;
+  }
+  
+  .eventos-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .eventos-page-wrapper .card {
+    margin-bottom: 1rem;
+  }
+  
+  .eventos-page-wrapper .d-flex.gap-2 {
+    gap: 0.5rem !important;
+  }
+  
+  .eventos-page-wrapper .btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Animaciones de entrada */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.eventos-page-wrapper .card {
+  animation: slideInUp 0.6s ease forwards;
+}
+
+/* Mejoras de accesibilidad */
+.eventos-page-wrapper .btn:focus {
+  box-shadow: 0 0 0 0.25rem rgba(108, 146, 202, 0.25);
+}
+
+.eventos-page-wrapper .card:focus-within {
+  outline: 2px solid #3b5e92;
+  outline-offset: 2px;
+}
+
+/* Estados de hover mejorados */
+.eventos-page-wrapper .card:hover .badge {
+  transform: scale(1.05);
+}
+
+.eventos-page-wrapper .card:hover .btn {
+  transform: scale(1.02);
+}
+
+/* Transiciones suaves para todos los elementos */
+.eventos-page-wrapper * {
+  transition: all 0.3s ease;
+}
+
+/* Mejoras de contraste */
+.eventos-page-wrapper .text-muted {
+  color: #6c757d !important;
+}
+
+.eventos-page-wrapper .text-white-50 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Optimización de rendimiento */
+.eventos-page-wrapper .card {
+  will-change: transform;
+}
+
+.eventos-page-wrapper .card:hover {
+  will-change: auto;
+}

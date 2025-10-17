@@ -1,0 +1,490 @@
+/* ==========================
+   RESERVAS - ESTILOS PROFESIONALES
+   ========================== */
+
+.reservas-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 2rem 0;
+}
+
+/* Header */
+.reservas-header {
+  margin-bottom: 3rem;
+}
+
+.reservas-titulo {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reservas-titulo i {
+  color: #007bff;
+}
+
+.reservas-subtitulo {
+  font-size: 1.2rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* Estadísticas */
+.stat-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border: 2px solid rgba(0, 123, 255, 0.1);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
+  border-color: rgba(0, 123, 255, 0.2);
+}
+
+.stat-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.stat-icon.total {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+}
+
+.stat-icon.confirmadas {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.stat-icon.pendientes {
+  background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
+}
+
+.stat-icon.entradas {
+  background: linear-gradient(135deg, #6f42c1 0%, #e83e8c 100%);
+}
+
+.stat-info {
+  flex: 1;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Estado vacío */
+.empty-reservas {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 20px;
+  border: 2px dashed rgba(0, 123, 255, 0.2);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+.empty-reservas h3 {
+  color: #495057;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.empty-reservas p {
+  color: #6c757d;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Cards de reservas */
+.reserva-card {
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background: #ffffff;
+  height: 100%;
+}
+
+.reserva-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen de la reserva */
+.reserva-imagen {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.reserva-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.reserva-card:hover .reserva-img {
+  transform: scale(1.05);
+}
+
+.reserva-estado {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.estado-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Cuerpo de la reserva */
+.reserva-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 200px);
+}
+
+.reserva-info {
+  flex: 1;
+  margin-bottom: 1.5rem;
+}
+
+.reserva-titulo-evento {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.reserva-fecha,
+.reserva-hora,
+.reserva-ubicacion {
+  display: flex;
+  align-items: center;
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.reserva-fecha i,
+.reserva-hora i,
+.reserva-ubicacion i {
+  color: #007bff;
+  width: 16px;
+  text-align: center;
+}
+
+/* Detalles de la reserva */
+.reserva-details {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #007bff;
+}
+
+.reserva-cantidad,
+.reserva-precio {
+  display: flex;
+  align-items: center;
+  color: #495057;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.reserva-cantidad:last-child,
+.reserva-precio:last-child {
+  margin-bottom: 0;
+}
+
+.reserva-cantidad i,
+.reserva-precio i {
+  color: #28a745;
+  width: 16px;
+  text-align: center;
+}
+
+.reserva-precio {
+  color: #28a745;
+  font-size: 1rem;
+}
+
+/* Acciones */
+.reserva-acciones {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.btn-accion {
+  border-radius: 25px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-accion:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Animaciones específicas para reservas */
+@keyframes fadeInUpReservas {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reservas-wrapper .fade-in-up {
+  animation: fadeInUpReservas 0.6s ease forwards;
+}
+
+.reserva-card:nth-child(1) { animation-delay: 0.1s; }
+.reserva-card:nth-child(2) { animation-delay: 0.2s; }
+.reserva-card:nth-child(3) { animation-delay: 0.3s; }
+.reserva-card:nth-child(4) { animation-delay: 0.4s; }
+.reserva-card:nth-child(5) { animation-delay: 0.5s; }
+.reserva-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .reservas-titulo {
+    font-size: 2rem;
+  }
+  
+  .stat-card {
+    padding: 1.5rem;
+  }
+  
+  .stat-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .reservas-wrapper {
+    padding: 1rem 0;
+  }
+  
+  .reservas-titulo {
+    font-size: 1.8rem;
+  }
+  
+  .reservas-subtitulo {
+    font-size: 1rem;
+  }
+  
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  
+  .stat-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .reserva-imagen {
+    height: 180px;
+  }
+  
+  .reserva-body {
+    padding: 1.2rem;
+  }
+  
+  .reserva-titulo-evento {
+    font-size: 1.1rem;
+  }
+  
+  .reserva-acciones {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .reservas-titulo {
+    font-size: 1.5rem;
+  }
+  
+  .reservas-subtitulo {
+    font-size: 0.9rem;
+  }
+  
+  .stat-card {
+    padding: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+  }
+  
+  .reserva-imagen {
+    height: 160px;
+  }
+  
+  .reserva-body {
+    padding: 1rem;
+  }
+  
+  .reserva-titulo-evento {
+    font-size: 1rem;
+  }
+  
+  .reserva-fecha,
+  .reserva-hora,
+  .reserva-ubicacion {
+    font-size: 0.8rem;
+  }
+  
+  .btn-accion {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .empty-reservas {
+    padding: 3rem 1rem;
+  }
+  
+  .empty-icon {
+    font-size: 3rem;
+  }
+}
+
+/* Mejoras de accesibilidad */
+.stat-card:focus,
+.reserva-card:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+.btn-accion:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+/* Estados de hover mejorados */
+.reserva-card:hover .reserva-titulo-evento {
+  color: #007bff;
+}
+
+.reserva-card:hover .estado-badge {
+  transform: scale(1.05);
+}
+
+/* Transiciones suaves específicas para reservas */
+.reservas-wrapper * {
+  transition: all 0.3s ease;
+}
+
+/* Optimización de rendimiento */
+.reserva-card,
+.stat-card {
+  will-change: transform;
+}
+
+.reserva-card:hover,
+.stat-card:hover {
+  will-change: auto;
+}
+
+/* Efectos de gradiente sutiles */
+.reserva-details::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #007bff, #28a745);
+  border-radius: 2px;
+}
+
+/* Mejoras visuales adicionales */
+.reserva-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.reserva-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.reserva-card:hover::before {
+  left: 100%;
+}

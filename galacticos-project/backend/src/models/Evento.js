@@ -10,6 +10,8 @@ class Evento extends Model {
       aforo_maximo: { type: DataTypes.INTEGER, allowNull: false, validate: { min: 1 } },
       aforo_actual: { type: DataTypes.INTEGER, defaultValue: 0, validate: { min: 0 } },
       precio: { type: DataTypes.FLOAT, allowNull: false, validate: { min: 0 } },
+      imagen: { type: DataTypes.STRING },
+      tipo: { type: DataTypes.ENUM('concierto', 'teatro', 'cine', 'deporte', 'comedia', 'otro'), allowNull: false },
       ubicacion: { type: DataTypes.STRING }
     }, {
       sequelize,

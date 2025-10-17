@@ -17,10 +17,15 @@ const crearEventoSchema = Joi.object({
     'number.base': 'El aforo máximo debe ser un número',
     'number.min': 'El aforo máximo debe ser al menos 1'
   }),
+  tipo: Joi.string().valid('concierto', 'teatro', 'cine', 'deporte', 'comedia', 'otro').required().messages({
+    'string.base': 'El tipo debe ser un string',
+    'string.valid': 'El tipo debe ser uno de los siguientes: concierto, teatro, cine, deporte, comedia, otro'
+  }),
   precio: Joi.number().min(0).required().messages({
     'number.base': 'El precio debe ser un número',
     'number.min': 'El precio no puede ser negativo'
   }),
+  imagen: Joi.string().optional().allow(''),
   ubicacion: Joi.string().optional().allow('')
 });
 
@@ -30,7 +35,9 @@ const actualizarEventoSchema = Joi.object({
   fecha: Joi.date().greater('now'),
   aforo_maximo: Joi.number().integer().min(1),
   precio: Joi.number().min(0),
-  ubicacion: Joi.string().optional().allow('')
+  ubicacion: Joi.string().optional().allow(''),
+  tipo: Joi.string().valid('concierto', 'teatro', 'cine', 'deporte', 'comedia', 'otro'),
+  imagen: Joi.string().optional().allow('')
 }).min(1); // al menos un campo para actualizar
 
 module.exports = {

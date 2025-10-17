@@ -38,13 +38,13 @@ const pdfWorker = new Worker('pdfQueue', async (job) => {
     doc.fontSize(12).text(`Evento: ${reserva.evento.nombre}`);
     doc.text(`Fecha: ${new Date(reserva.evento.fecha).toLocaleString()}`);
     doc.text(`Ubicación: ${reserva.evento.ubicacion || 'Por definir'}`);
-    doc.text(`Precio por entrada: $${reserva.evento.precio}`);
+    doc.text(`Precio por entrada: Q${reserva.evento.precio}`);
     doc.moveDown();
 
     // Información de la reserva
     doc.text(`Número de reserva: ${reserva.id}`);
     doc.text(`Cantidad de entradas: ${reserva.cantidad_entradas}`);
-    doc.text(`Total pagado: $${reserva.evento.precio * reserva.cantidad_entradas}`);
+    doc.text(`Total pagado: Q${reserva.evento.precio * reserva.cantidad_entradas}`);
     doc.text(`Código de reserva: ${reserva.codigo_qr}`);
     doc.moveDown();
 

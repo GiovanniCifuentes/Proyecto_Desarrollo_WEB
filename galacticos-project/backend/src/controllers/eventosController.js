@@ -1,5 +1,6 @@
 const { Evento, Reserva } = require('../models');
 const { crearEventoSchema, actualizarEventoSchema } = require('../validation/eventos');
+const { deleteImage } = require('../config/cloudinary');
 
 const eventosController = {
   async listarEventos(req, res) {
@@ -68,8 +69,13 @@ const eventosController = {
         return res.status(403).json({ error: 'No tienes permisos para crear eventos' });
       }
 
+      // La imagen ya está en req.body.imagen gracias al middleware
       const { error, value } = crearEventoSchema.validate(req.body);
       if (error) {
+        // Si hay error de validación y se subió una imagen, eliminarla de Cloudinary
+        if (req.body.imagen && req.body.imagen.includes('cloudinary')) {
+          await deleteImage(req.body.imagen);
+        }
         return res.status(400).json({ error: error.details[0].message });
       }
 
@@ -81,6 +87,12 @@ const eventosController = {
       });
     } catch (error) {
       console.error('Error creando evento:', error);
+      
+      // Si hay error y se subió una imagen, eliminarla de Cloudinary
+      if (req.body.imagen && req.body.imagen.includes('cloudinary')) {
+        await deleteImage(req.body.imagen);
+      }
+      
       res.status(500).json({ error: 'Error interno del servidor' });
     }
   },
@@ -95,12 +107,25 @@ const eventosController = {
 
       const { error, value } = actualizarEventoSchema.validate(req.body);
       if (error) {
+        // Si hay error de validación y se subió una nueva imagen, eliminarla
+        if (req.body.imagen && req.body.imagen.includes('cloudinary')) {
+          await deleteImage(req.body.imagen);
+        }
         return res.status(400).json({ error: error.details[0].message });
       }
 
       const evento = await Evento.findByPk(id);
       if (!evento) {
+        // Si no existe el evento y se subió una nueva imagen, eliminarla
+        if (req.body.imagen && req.body.imagen.includes('cloudinary')) {
+          await deleteImage(req.body.imagen);
+        }
         return res.status(404).json({ error: 'Evento no encontrado' });
+      }
+
+      // Si se está actualizando la imagen y había una anterior, eliminar la anterior
+      if (req.body.imagen && evento.imagen && evento.imagen.includes('cloudinary')) {
+        await deleteImage(evento.imagen);
       }
 
       await evento.update(value);
@@ -111,6 +136,12 @@ const eventosController = {
       });
     } catch (error) {
       console.error('Error actualizando evento:', error);
+      
+      // Si hay error y se subió una nueva imagen, eliminarla
+      if (req.body.imagen && req.body.imagen.includes('cloudinary')) {
+        await deleteImage(req.body.imagen);
+      }
+      
       res.status(500).json({ error: 'Error interno del servidor' });
     }
   },
@@ -134,6 +165,11 @@ const eventosController = {
         return res.status(400).json({ 
           error: 'No se puede eliminar el evento porque tiene reservas asociadas' 
         });
+      }
+
+      // Si el evento tiene imagen en Cloudinary, eliminarla
+      if (evento.imagen && evento.imagen.includes('cloudinary')) {
+        await deleteImage(evento.imagen);
       }
 
       await evento.destroy();

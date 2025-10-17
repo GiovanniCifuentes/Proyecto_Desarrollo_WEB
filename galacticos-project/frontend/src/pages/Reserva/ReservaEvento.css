@@ -1,0 +1,595 @@
+/* ==========================
+   RESERVA EVENTO - ESTILOS PROFESIONALES
+   ========================== */
+
+.reserva-evento-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 2rem 0;
+}
+
+/* Header del evento */
+.evento-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.evento-titulo {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.evento-subtitulo {
+  font-size: 1.2rem;
+  color: #6c757d;
+  margin: 0;
+  font-weight: 500;
+}
+
+.evento-subtitulo i {
+  color: #007bff;
+}
+
+/* Contenedor de imagen */
+.evento-imagen-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.evento-imagen-container:hover {
+  transform: translateY(-5px);
+}
+
+.evento-imagen {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.evento-imagen-container:hover .evento-imagen {
+  transform: scale(1.05);
+}
+
+.evento-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Card de información */
+.evento-info-card {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  height: 100%;
+}
+
+.evento-datos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dato-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #007bff;
+  transition: all 0.3s ease;
+}
+
+.dato-item:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.dato-item i {
+  font-size: 1.2rem;
+  min-width: 24px;
+}
+
+.dato-item strong {
+  color: #495057;
+  font-weight: 600;
+}
+
+.dato-item span {
+  color: #6c757d;
+}
+
+.precio-destacado {
+  color: #28a745 !important;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.evento-descripcion h5 {
+  color: #1a1a1a;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
+}
+
+.evento-descripcion p {
+  color: #6c757d;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Card del teatro */
+.teatro-card {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.teatro-card .card-header {
+  border: none;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+}
+
+.teatro-card .card-header h4 {
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Contenedor del teatro */
+.teatro-container {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  padding: 2rem;
+  position: relative;
+}
+
+/* Escenario */
+.escenario {
+  background: linear-gradient(135deg, #6f42c1 0%, #e83e8c 100%);
+  height: 80px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(111, 66, 193, 0.3);
+}
+
+.escenario-label {
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.escenario::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 1px;
+}
+
+.escenario::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 1px;
+}
+
+/* Separador */
+.separador-teatro {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #007bff, transparent);
+  margin: 1.5rem 0;
+  border-radius: 2px;
+}
+
+/* Contenedor de asientos */
+.asientos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Zonas de asientos */
+.zona-asientos {
+  position: relative;
+}
+
+.zona-label {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #495057;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 123, 255, 0.1);
+  border-radius: 25px;
+  border: 2px solid rgba(0, 123, 255, 0.2);
+}
+
+/* Primera fila */
+.primera-fila .zona-label {
+  background: rgba(220, 53, 69, 0.1);
+  border-color: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+}
+
+/* Preferencial */
+.preferencial .zona-label {
+  background: rgba(255, 193, 7, 0.1);
+  border-color: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+}
+
+/* General */
+.general .zona-label {
+  background: rgba(40, 167, 69, 0.1);
+  border-color: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+}
+
+/* Grid de asientos */
+.asientos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+  gap: 0.5rem;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Asientos individuales */
+.asiento {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 2px solid transparent;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.asiento.disponible {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+.asiento.disponible:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+.asiento.ocupado {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  color: white;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.asiento.seleccionado {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  transform: scale(1.15);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+  border-color: #ffffff;
+}
+
+.numero-asiento {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Leyenda */
+.leyenda-asientos {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  border: 2px solid rgba(0, 123, 255, 0.1);
+}
+
+.leyenda-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+.asiento.leyenda {
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Asientos seleccionados */
+.asientos-seleccionados {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  border: 2px solid #28a745;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  animation: fadeInUp 0.5s ease;
+}
+
+.asientos-seleccionados h5 {
+  color: #155724;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.selected-seats {
+  margin-bottom: 1rem;
+}
+
+.total-price {
+  font-size: 1.2rem;
+  color: #155724;
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 2px solid rgba(21, 87, 36, 0.2);
+}
+
+/* Botón de reserva */
+.btn-reservar {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 3rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);
+}
+
+.btn-reservar:hover:not(:disabled) {
+  background: linear-gradient(135deg, #20c997 0%, #28a745 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(40, 167, 69, 0.4);
+}
+
+.btn-reservar:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.evento-imagen-container,
+.evento-info-card,
+.teatro-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.evento-info-card {
+  animation-delay: 0.2s;
+}
+
+.teatro-card {
+  animation-delay: 0.4s;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .evento-titulo {
+    font-size: 2rem;
+  }
+  
+  .evento-imagen {
+    height: 300px;
+  }
+  
+  .evento-datos {
+    gap: 1rem;
+  }
+  
+  .dato-item {
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .reserva-evento-wrapper {
+    padding: 1rem 0;
+  }
+  
+  .evento-titulo {
+    font-size: 1.8rem;
+  }
+  
+  .evento-subtitulo {
+    font-size: 1rem;
+  }
+  
+  .evento-imagen {
+    height: 250px;
+  }
+  
+  .evento-badge {
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .teatro-container {
+    padding: 1rem;
+  }
+  
+  .escenario {
+    height: 60px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .escenario-label {
+    font-size: 1rem;
+  }
+  
+  .zona-label {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .asiento {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .numero-asiento {
+    font-size: 0.7rem;
+  }
+  
+  .leyenda-asientos {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .btn-reservar {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .evento-titulo {
+    font-size: 1.5rem;
+  }
+  
+  .evento-subtitulo {
+    font-size: 0.9rem;
+  }
+  
+  .evento-imagen {
+    height: 200px;
+  }
+  
+  .dato-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .teatro-container {
+    padding: 0.8rem;
+  }
+  
+  .escenario {
+    height: 50px;
+  }
+  
+  .escenario-label {
+    font-size: 0.9rem;
+  }
+  
+  .zona-label {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .asiento {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .numero-asiento {
+    font-size: 0.65rem;
+  }
+  
+  .asientos-seleccionados {
+    padding: 1rem;
+  }
+  
+  .btn-reservar {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mejoras de accesibilidad */
+.asiento:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+.btn-reservar:focus {
+  box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+}
+
+/* Estados de hover mejorados */
+.dato-item:hover i {
+  color: #0056b3;
+}
+
+.asiento.disponible:hover .numero-asiento {
+  font-weight: 800;
+}
+
+/* Transiciones suaves */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Optimización de rendimiento */
+.evento-imagen-container,
+.asiento {
+  will-change: transform;
+}
+
+.evento-imagen-container:hover,
+.asiento:hover {
+  will-change: auto;
+}

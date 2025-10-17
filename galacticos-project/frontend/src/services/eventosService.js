@@ -13,12 +13,20 @@ export const eventosService = {
   },
 
   async create(eventoData) {
-    const response = await api.post('/eventos', eventoData);
+    // Si es FormData, axios automáticamente establece el Content-Type correcto
+    const config = eventoData instanceof FormData 
+      ? { headers: { 'Content-Type': 'multipart/form-data' } }
+      : {};
+    const response = await api.post('/eventos', eventoData, config);
     return response.data;
   },
 
   async update(id, eventoData) {
-    const response = await api.put(`/eventos/${id}`, eventoData);
+    // Si es FormData, axios automáticamente establece el Content-Type correcto
+    const config = eventoData instanceof FormData 
+      ? { headers: { 'Content-Type': 'multipart/form-data' } }
+      : {};
+    const response = await api.put(`/eventos/${id}`, eventoData, config);
     return response.data;
   },
 
